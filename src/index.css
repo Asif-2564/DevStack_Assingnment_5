@@ -1,2 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+.body{
+    font-family: 'Inter', sans-serif;
+}
+.gradient-text{
+    background: linear-gradient(
+        135deg,
+        #FF5722,
+        #D81B7E,
+    #7C3AED
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
