@@ -1,7 +1,7 @@
 // import React from 'react';
 
 import type { ITechType } from "../../types/types";
-
+import Star from "../../assets/star.png";
 
 // interface techProps{
     
@@ -13,23 +13,27 @@ const TechnologyCard = ({technology}) => {
             {
             technology.map((tech:ITechType)=>{
                 return (
-                    <div className="card w-70 bg-base-100 shadow-sm">
-                    <div className="card-body">
+                    <div className="card w-75 bg-base-100 shadow-sm">
+                    <div className="card-body grid gap-5">
                         <div className="flex justify-between">
                             <img className="h-8 w-8" src={tech.icon} alt="logo"/>
                             <div className="badge badge-outline badge-accent">{tech.badge}</div>
                         </div>
-                        <div>
-                            <p>{tech.name}</p>
-                            <p>{tech.description}</p>
+                        <div className="grid gap-2">
+                            <p className="text-2xl font-bold">{tech.name}</p>
+                            <p className="text-[#64748B]">{tech.description}</p>
                         </div>
-                        <div className="flex justify-between">
-                            <p>{tech.category}</p>
-                            <p>{tech.difficulty}</p>
-                            <p>{tech.rating}</p>
+                        <div className="flex justify-between items-center gap-0.5">
+                            <div className="badge badge-ghost text-[12px] font-semibold">{tech.category}</div>
+                            <p className="text-[12px] font-semibold ">{tech.difficulty}</p>
+                            <div className="flex justify-between items-center gap-0.5">
+                                <img src={Star} alt="start image" className="h-3.5 w-3.5" ></img>
+                                <p className="text-[12px] font-semibold">{tech.rating}</p>
+                            </div>
+
                         </div>
                         <div className="mt-6">
-                            <button className="btn btn-block bg-[#0A0F1D] text-white">Subscribe</button>
+                            <button className="btn btn-block bg-[#0A0F1D] text-white">AddtoStack</button>
                         </div>
                     </div>
                 </div>
@@ -38,31 +42,6 @@ const TechnologyCard = ({technology}) => {
             })
         }
         </div>
-
-
-        
-        //     <div className="card w-96 bg-base-100 shadow-sm">
-        //     <div className="card-body">
-        //         <div className="flex justify-between">
-        //             <img src="https://www.flaticon.com/free-icon" alt="logo"/>
-        //             <div className="badge badge-outline badge-accent">Accent</div>
-        //         </div>
-        //         <div>
-        //             <p>React</p>
-        //             <p>A declarative, component-based
-        //             JavaScript library for building modern user
-        //             interfaces.</p>
-        //         </div>
-        //         <div className="flex justify-between">
-        //             <p>category</p>
-        //             <p>difficulty</p>
-        //             <p>rating</p>
-        //         </div>
-        //     </div>
-        //     <div className="mt-6">
-        //         <button className="btn btn-wide bg-[#0A0F1D] text-white">Subscribe</button>
-        //     </div>
-        // </div>
     );
 };
 
