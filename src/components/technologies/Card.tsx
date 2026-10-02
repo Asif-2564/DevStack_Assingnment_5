@@ -12,9 +12,8 @@ interface ICardTypeProps{
 }
 const Card = ({tech, selectedTech, setSelectedTech}:ICardTypeProps) => {
     const [addToStack, setAddToStack] = useState(false);
-    console.log(addToStack,setAddToStack);
     return (
-            <div className="card w-75 bg-base-100 shadow-sm">
+            <div className="card w-70 bg-base-100 base-100 shadow-sm">
                 <div className="card-body grid gap-5">
                     <div className="flex justify-between">
                         <img className="h-8 w-8" src={tech.icon} alt="logo"/>
@@ -38,6 +37,7 @@ const Card = ({tech, selectedTech, setSelectedTech}:ICardTypeProps) => {
                             onClick={()=>{
                                 toast(`${tech.name} added to your stack`);
                                 setAddToStack(true);
+                                setSelectedTech([...selectedTech,tech]);
                             }  
                             }
                             disabled = {addToStack}

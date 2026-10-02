@@ -9,6 +9,7 @@ interface SelectedTechProps{
 
 const TechStackCard = ({ selectedTech, setSelectedTech }: SelectedTechProps) => {
     return (
+        
         <div>
             <CardStack selectedTech={selectedTech} setSelectedTech={setSelectedTech}/>
         </div>

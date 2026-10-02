@@ -9,7 +9,6 @@ interface techProps{
 }
 
 const TechnologyCard = ({technology, selectedTech, setSelectedTech}:techProps) => {
-    console.log(`This is from technology card ${selectedTech} and ${setSelectedTech}`);
     return (
         <div className="grid grid-cols-3 gap-4">
             {
