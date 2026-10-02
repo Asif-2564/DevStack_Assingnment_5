@@ -2,15 +2,15 @@
 import { use,useState } from "react";
 import type { ITechType } from "../../types/types";
 import TechnologyCard from "./TechnologyCard";
-import TechStack from "./TechStackCard";
+import TechStackCard from "./TechStackCard";
 
 interface techProps{
     technologiesPromise: Promise<ITechType[]>
 }
 const Technologies = ({technologiesPromise}:techProps) => {
     const technology = use(technologiesPromise);
-    console.log(technology);
-    const [selectedTech,setSelectedTech] = useState([]);
+
+    const [selectedTech,setSelectedTech] = useState<ITechType[]>([]);
     return (
 
         <section className="container mx-auto">
@@ -20,7 +20,7 @@ const Technologies = ({technologiesPromise}:techProps) => {
             </div>
             <div className="flex justify-between mt-10">
                 <div><TechnologyCard selectedTech={selectedTech} setSelectedTech={setSelectedTech} technology={technology}/></div>
-                <div><TechStack></TechStack></div>
+                <div><TechStackCard selectedTech={selectedTech} setSelectedTech={setSelectedTech}></TechStack></div>
             </div>
         </section>
     );

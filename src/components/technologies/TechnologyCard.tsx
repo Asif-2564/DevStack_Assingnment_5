@@ -15,7 +15,11 @@ const TechnologyCard = ({technology, selectedTech, setSelectedTech}:techProps) =
             {
             technology.map((tech:ITechType)=>{
                 return (
-                    <Card key={tech.id} tech={tech}></Card>
+                    <Card 
+                    key={tech.id} 
+                    tech={tech} 
+                    selectedTech = {selectedTech}
+                    setSelectedTech = {setSelectedTech} ></Card>
                 )
             })
         }

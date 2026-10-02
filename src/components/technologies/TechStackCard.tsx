@@ -1,9 +1,16 @@
+import { type Dispatch, type SetStateAction } from "react";
+import type { ITechType } from "../../types/types";
+import CardStack from "./CardStack";
 
+interface SelectedTechProps{
+    selectedTech:ITechType[],
+    setSelectedTech: Dispatch<SetStateAction<ITechType[]>>
+}
 
-const TechStackCard = () => {
+const TechStackCard = ({ selectedTech, setSelectedTech }: SelectedTechProps) => {
     return (
         <div>
-            <h1>This is the technology stack card</h1>
+            <CardStack selectedTech={selectedTech} setSelectedTech={setSelectedTech}/>
         </div>
     );
 };

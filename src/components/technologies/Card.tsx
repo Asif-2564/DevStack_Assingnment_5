@@ -1,13 +1,16 @@
 import Star from "../../assets/star.png";
-import {useState} from 'react';
+import { useState } from 'react';
 import type { ITechType } from "../../types/types";
 import { toast } from "react-toastify";
+import type { Dispatch, SetStateAction } from "react";
 
 interface ICardTypeProps{
     tech: ITechType,
+    selectedTech:ITechType[],
+    setSelectedTech: Dispatch<SetStateAction<ITechType[]>>
 
 }
-const Card = ({tech}:{tech:ITechType}) => {
+const Card = ({tech, selectedTech, setSelectedTech}:ICardTypeProps) => {
     const [addToStack, setAddToStack] = useState(false);
     console.log(addToStack,setAddToStack);
     return (
