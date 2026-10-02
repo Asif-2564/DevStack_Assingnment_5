@@ -12,6 +12,7 @@ interface ICardTypeProps{
 }
 const Card = ({tech, selectedTech, setSelectedTech}:ICardTypeProps) => {
     const [addToStack, setAddToStack] = useState(false);
+    const isAdded = selectedTech.some((selected)=>selected.id===tech.id);
     return (
             <div className="card w-70 bg-base-100 base-100 shadow-sm">
                 <div className="card-body grid gap-5">
@@ -40,14 +41,14 @@ const Card = ({tech, selectedTech, setSelectedTech}:ICardTypeProps) => {
                                 setSelectedTech([...selectedTech,tech]);
                             }  
                             }
-                            disabled = {addToStack}
+                            disabled = {isAdded}
                             className="btn btn-block 
                             bg-[#0A0F1D] 
                             text-white
                             disabled:bg-gray-300
                             disabled:text-gray-700"
                             >
-                                {addToStack === true ? "Added to Stack" : "AddtoStack"}
+                                {isAdded || addToStack === true ? "Added to Stack" : "AddtoStack"}
                             </button>
                 </div>
             </div>

@@ -74,7 +74,14 @@ const CardStack = ({selectedTech,setSelectedTech}:ISelectedTechCardProps) => {
                             </div>
                         ))}
                         <div>
-                            <button className="btn btn-block btn-outline btn-error mt-3">Remove All</button>
+                            <button 
+                            className="btn btn-block
+                            btn-outline 
+                            btn-error 
+                            mt-3" onClick={()=>{
+                                setSelectedTech([]);
+                                toast(`All technology removed!`);
+                                }}>Remove All</button>
                         </div>
                     </div>
                 )}
