@@ -11,7 +11,7 @@ const TechStackCard = ({ selectedTech, setSelectedTech }: SelectedTechProps) => 
     return (
         
         <div>
-            <CardStack selectedTech={selectedTech} setSelectedTech={setSelectedTech}/>
+            <CardStack  selectedTech={selectedTech} setSelectedTech={setSelectedTech}/>
         </div>
     );
 };

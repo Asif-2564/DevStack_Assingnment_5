@@ -48,7 +48,7 @@ const Card = ({tech, selectedTech, setSelectedTech}:ICardTypeProps) => {
                             disabled:bg-gray-300
                             disabled:text-gray-700"
                             >
-                                {isAdded || addToStack === true ? "Added to Stack" : "AddtoStack"}
+                                {isAdded && addToStack === true ? "Added to Stack" : "AddtoStack"}
                             </button>
                 </div>
             </div>

@@ -80,7 +80,7 @@ const CardStack = ({selectedTech,setSelectedTech}:ISelectedTechCardProps) => {
                             btn-error 
                             mt-3" onClick={()=>{
                                 setSelectedTech([]);
-                                toast(`All technology removed!`);
+                                toast(`All technologies are removed!`);
                                 }}>Remove All</button>
                         </div>
                     </div>
